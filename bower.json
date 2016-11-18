@@ -1,0 +1,19 @@
+{
+  "name": "mix2-movil",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.1.1"
+  },
+  "dependencies": {
+    "angular-toastr": "~1.6.0",
+    "jg-origins-manager": "~0.1.2",
+    "ngstorage": "~0.3.10",
+    "satellizer": "~0.13.1",
+    "ionic-fancy-select": "https://github.com/tipstrade/ionic-fancy-select.git",
+    "socket.io-client": "~1.3.7",
+    "checklist-model": "~0.8.0"
+  },
+  "resolutions": {
+    "angular": "1.4.3"
+  }
+}

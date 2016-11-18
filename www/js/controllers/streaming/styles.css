@@ -1,0 +1,11 @@
+.streaming-board {
+    height: 700px;
+}
+
+.streaming-board > *, .streaming-board .panel-side > .row > *{
+    height: 100%;
+}
+
+.streaming-board .panel-side > .row {
+    height: 50%;
+}

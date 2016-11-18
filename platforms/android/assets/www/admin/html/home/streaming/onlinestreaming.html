@@ -1,0 +1,29 @@
+<ion-view>
+  <ion-header-bar class="bar-positive">
+    <button class="button button-stable ion-chevron-left button-positive" ng-click="goBack('streaming')">
+      Finalizar Streaming
+    </button>
+    <h1 class="title">{{Streaming}}</h1>
+
+    <div class="buttons">
+      <button class="button button-stable ion-power button-positive" ng-click="cerrarSesion()">
+        Salir
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <ion-slide-box on-slide-changed="changePage($index)">
+      <ion-slide ng-repeat="urlFile in currentStreaming.file.imagenes">
+        <ion-list>
+          <div class="item item-image">
+            <img class="full-image" ng-src="{{urlFile|originsManager:'base'}}">
+          </div>
+        </ion-list>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+  <div style="position: fixed;width: 200px;height: 200px;top: 0;right: 0" ng-if="mediaStreaming">
+    <video style="max-width: 100%;max-height: 100%;" id="targetVideo" width="450" height="368"
+           autoplay="autoplay" muted></video>
+  </div>
+</ion-view>

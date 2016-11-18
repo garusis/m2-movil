@@ -1,0 +1,78 @@
+<ion-view>
+
+  <ion-header-bar class="bar-positive no-bck ">
+    <h1 class="title text-center-force">
+      <img src="img/icon-mix2.png" alt="" style="max-height: 95%;top: 2.5%;">
+    </h1>
+  </ion-header-bar>
+
+  <ion-content>
+    <div class="list card">
+
+      <div class="item item-divider f-square-721 bck-gray-light c-border-down">
+        <img src="img/encuesta.png" style="height: 20px">
+        Encuestas
+      </div>
+      <div ng-if="pendingPolls.length==0" class="item">
+        <p class="f-arial">
+          No tiene encuestas pendientes.
+        </p>
+      </div>
+      <div>
+        <a ng-repeat="poll in pendingPolls" class="item item-icon-right f-arial"
+           ui-sref="pollsSolve({id:poll.id, name:poll.name})">
+          {{poll.name}}
+
+          <!--
+          <i class="icon ion-android-done"></i>
+          -->
+          <div class="icon-enter">
+            <img src="img/enter-icon.png" alt="->">
+          </div>
+        </a>
+      </div>
+      <div class="item item-divider bck-gray-dark">
+        <!--
+        <a class="tab-item" ng-click="loadPendings()">
+          <i class="icon ion-android-done"></i>
+          Actualizar
+        </a>
+        -->
+      </div>
+    </div>
+
+    <div class="list card">
+      <div class="item item-divider f-square-721 bck-white c-border-down">
+        <img src="img/test.png" style="height: 20px">
+        Tests
+      </div>
+      <div ng-if="pendingTests.length==0" class="item bck-gray-light">
+        <p class="f-arial">
+          No tiene tests pendientes.
+        </p>
+      </div>
+      <div>
+        <a ng-repeat="test in pendingTests" class="item item-icon-right f-arial bck-gray-light"
+           ui-sref="testsSolve({id:test.id, name:test.name})">
+          {{test.name}}
+          <div class="icon-enter">
+            <img src="img/enter-icon.png" alt="->">
+          </div>
+        </a>
+      </div>
+
+      <div class="item item-divider bck-gray-dark">
+        <!--
+        <a class="tab-item" ng-click="loadPendings()">
+          <i class="icon ion-android-done"></i>
+          Actualizar
+        </a>
+        -->
+      </div>
+    </div>
+
+    <div class="close-session" ng-click="cerrarSesion()">
+
+    </div>
+  </ion-content>
+</ion-view>

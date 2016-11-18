@@ -1,0 +1,212 @@
+.m-t-1rem{
+  margin-top: 1rem !important;
+}
+.m-b-1rem{
+  margin-bottom: 1rem !important;
+}
+
+.p-vertical-3px{
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+.no-border{
+  border: 0 !important;
+}
+.no-padding{
+  padding: 0 !important;
+}
+.no-bck{
+  background: transparent;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.no-opacity{
+  opacity: 0 !important;
+}
+.bck-login{
+  background: url("../img/fondo.png");
+  background-position: center;
+  background-size: cover;
+}
+.content-box{
+  box-sizing: content-box ;
+}
+.margin-center{
+  margin: 0 auto;
+}
+
+
+.text-center-force{
+  text-align: center !important;
+}
+.no-button,.no-button:hover,.no-button:active,.no-button:focus{
+  background-color: transparent !important;
+  border: 0 !important;
+}
+/************************************/
+/************************************/
+/************************************/
+input:-webkit-autofill{
+  background-color: #FFF !important;
+}
+.input-login input, .input-login input:-webkit-autofill,.input-login input:focus{
+  background: #FFF;
+  border: 3px solid #3D4C5A !important;
+  border-radius: 5px !important;
+  border-top:0px !important;
+  border-bottom: 6px solid #3D4C5A !important;
+  height: 50px;
+  padding-left: 65px !important;
+  width: 100%;
+}
+.input-login i{
+  color: #324B80 !important;
+  border-right: 1px solid #606062;
+  font-size: 31px;
+  margin: 0;
+  padding: 4px 36px 4px 18px;
+  height: auto;
+  width: 33px;
+  margin-top: 3px;
+}
+
+
+
+.input-login.input-icon{
+  position: relative;
+}
+.input-login.input-icon i{
+  left: 0;
+  top:0;
+  position: absolute;
+  z-index: 2;
+}
+.input-login.input-icon i{
+  left: 0;
+  top:0;
+  position: absolute;
+  z-index: 1;
+}
+
+.button-login{
+  background-image: url("../img/button-login.png");
+  background-position: center;
+  background-size: cover;
+  height: 65px;
+  margin:1rem auto;
+  width: 80px;
+}
+
+.img-login{
+  margin: 3rem 0;
+  max-width: 90%;
+}
+
+
+.item, .item h1, .item h2, .item h3, .item h4, .item h5, .item h6, .item p, .item-content, .item-content h1, .item-content h2, .item-content h3, .item-content h4, .item-content h5, .item-content h6, .item-content p{
+  white-space: normal !important;
+}
+
+
+@font-face {
+  font-family: "Square-721";
+  src: url("../fonts/Squ721Rm.ttf");
+}
+.f-square-721{
+  font-family: "Square-721";
+}
+.f-arial{
+  font-family: "Arial";
+}
+
+.bck-gray-light{
+  background: #E6E7E8;
+}
+.bck-gray-dark{
+  background: #A1A3A1;
+}
+
+.bck-white{
+  background: #FEFEFE;
+}
+
+.c-border-down{
+  position: relative;
+}
+.c-border-down::before{
+  background: #A1A3A1;
+  bottom: 0;
+  content: " ";
+  height: 1px;
+  left: 2.5%;
+  margin: 0 auto;
+  position: absolute;
+  width: 95%;
+}
+
+
+.icon-enter{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  font-size: 32px;
+  right: 11px;
+}
+
+.icon-enter img{
+  max-height: 18px;
+}
+
+.close-session{
+  background-image: url("../img/logout.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 1rem;
+  float: right;
+  height: 40px;
+  margin-top:2rem;
+  position: relative;
+  right: 1rem;
+  width: 40px;
+}
+
+.header-green{
+  background: #1D9699 !important;
+  color: #FFF;
+}
+
+.header-green button,.header-green button:hover,.header-green button:focus,.header-green button:active{
+  color: #FFF;
+  border-radius: 7px;
+  border-color: #FFF;
+  background-color: transparent;
+}
+
+
+.header-gray-dark{
+  background-color: #33485D;
+  color: #FFF;
+}
+
+.header-gray-dark button,.header-gray-dark button:hover,.header-gray-dark button:active,.header-gray-dark button:focus{
+  color: #FFF;
+  border-radius: 7px;
+  border-color: #FFF;
+  background-color: transparent;
+}
+
+.c-white{
+  color: #FFF;
+}

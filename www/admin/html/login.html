@@ -1,0 +1,47 @@
+<ion-view>
+  <ion-content class="bck-login">
+    <form name="formLogin" ng-submit="lgCtrl.login(login)">
+      <div class="list">
+        <div class="item no-border no-bck" style="text-align: center;">
+          <img src="img/icon-mix2.png" class="img-login">
+        </div>
+
+        <div class="input-login input-icon col-90 margin-center">
+          <i class="ion-person"></i>
+          <input type="text" ng-model="login.identificador" required autocomplete="off" placeholder="Identificador de Usuario" name="username">
+        </div>
+
+        <div class="input-login input-icon col-90 margin-center m-t-1rem">
+          <i class="ion-locked"></i>
+          <input ng-model="login.password" required type="password" autocomplete="off" placeholder="Contraseña" name="password">
+        </div>
+
+        <div class="input-login input-icon col-90 margin-center m-t-1rem">
+          <i class="ion-android-phone-portrait"></i>
+          <input ng-model="login.direccion" required type="text" autocomplete="off" placeholder="http://192.168.1.63" name="direccion">
+        </div>
+
+        <!--
+        <label class="item item-input no-bck no-border">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="login.identificador" required autocomplete="off" placeholder="Identificador de Usuario" name="username">
+        </label>
+        <label class="item item-input no-bck no-border">
+          <span class="input-label">Password</span>
+          <input ng-model="login.password" required type="password" autocomplete="off" placeholder="Contraseña" name="password">
+        </label>
+
+
+        <label class="item item-input no-bck no-border">
+          <span class="input-label">Dirección</span>
+          <input ng-model="login.direccion" required type="text" autocomplete="off" placeholder="http://192.168.0.1:3432" name="direccion">
+        </label>
+
+        -->
+        <label class="item no-bck no-border col-90 text-center margin-center">
+          <button class="button-login no-button button no-border" type="submit"></button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

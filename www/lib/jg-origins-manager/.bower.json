@@ -1,0 +1,45 @@
+{
+  "name": "jg-origins-manager",
+  "private": false,
+  "version": "0.1.2",
+  "description": "A helper for urls management to requests. Can be used on any other module.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jarvigames/jg-origins-manager.git"
+  },
+  "license": "MIT",
+  "main": [
+    "dist/jg-request-origins.js"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "angular",
+    "request",
+    "url",
+    "helper",
+    "management",
+    "origins"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "lodash": "~3.10.1"
+  },
+  "homepage": "https://github.com/jarvigames/jg-origins-manager",
+  "author": "Marcos J. Alvarez (JarviGames)",
+  "bugs": {
+    "url": ""
+  },
+  "_release": "0.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.2",
+    "commit": "f7e21b589d6d904892a946e292fbc7e2bd8957ef"
+  },
+  "_source": "git://github.com/jarvigames/jg-origins-manager.git",
+  "_target": "~0.1.2",
+  "_originalSource": "jg-origins-manager",
+  "_direct": true
+}

@@ -1,0 +1,102 @@
+<ion-view>
+  <ion-header-bar class="header-gray-dark">
+
+    <h1 class="title f-square-721 c-white">
+      <img src="img/test-w.png" style="height: 20px">
+      {{::objects.currentTest.name }} {{objects.currentTest.user ?
+      ("("+objects.currentTest.user.nombres+" "+objects.currentTest.user.apellidos+")"): ""}}</h1>
+
+    <button class="button ion-chevron-left" ng-click="goBack('dashboard')">
+      Atrás
+    </button>
+  </ion-header-bar>
+  <ion-content>
+
+
+    <link href="css/select2/select2.css" rel="stylesheet">
+
+    <ion-slide-box>
+      <ion-slide ng-repeat="question in objects.currentTest.questions">
+
+        <div class="list card">
+
+          <div class="item">
+            <h2> {{::question.content}} <b>({{::question.isMultiple?"Tipo I":"Tipo X"}})</b></h2>
+          </div>
+
+          <div class="item item-image" ng-repeat="img in question.images">
+            <img class="full-image" src="{{img.uri|originsManager:'base'}}">
+          </div>
+
+          <div class="item item-body">
+
+            <div ng-repeat="answer in question.answers">
+
+              <li class="item item-checkbox" ng-show="question.isMultiple">
+                <label class="checkbox">
+                  <input type="checkbox" checklist-model="question.selectedAnswers" checklist-value="answer.id">
+                </label>
+                {{::answer.content}}
+              </li>
+
+              <label class="item item-radio" ng-show="!question.isMultiple">
+                <input type="radio" ng-model="question.selectedAnswers" ng-value="::answer.id"
+                       name="grupo-{{question.id}}">
+
+                <div class="radio-content">
+                  <div class="item-content">
+                    {{::answer.content}}
+                  </div>
+                  <i class="radio-icon ion-checkmark"></i>
+                </div>
+
+
+                <div class="item" ng-if="answer.images && answer.images.length > 0">
+                  <div class="row">
+                    <div class="col col-50" ng-repeat="img in answer.images"><img class="images"
+                                                                                  src="{{img.uri|originsManager:'base'}}">
+                    </div>
+                  </div>
+
+                </div>
+
+              </label>
+
+            </div>
+
+          </div>
+          <div class="item tabs tabs-secondary tabs-icon-left" ng-if="$index!=objects.currentTest.questions.length-1">
+            <a class="tab-item" ng-click="nextSlide()">
+              <i class="icon ion-chevron-right"></i>
+              Siguiente
+            </a>
+          </div>
+          <div class="item tabs tabs-secondary tabs-icon-left" ng-if="$index==objects.currentTest.questions.length-1">
+            <!--<a class="tab-item" href="#">-->
+            <!--<i class="icon ion-upload"></i>-->
+            <!--Guardar-->
+            <!--</a>-->
+            <a class="tab-item" ng-click="sendSolve()">
+              <i class="icon ion-android-done"></i>
+              Enviar
+            </a>
+          </div>
+
+          <div class="item item-divider bck-gray-dark">
+          </div>
+
+        </div>
+
+
+      </ion-slide>
+
+    </ion-slide-box>
+
+
+    <div class="close-session" ng-click="cerrarSesion()">
+
+    </div>
+  </ion-content>
+</ion-view>
+
+

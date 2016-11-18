@@ -1,0 +1,1 @@
+# jg-origins-manager

@@ -1,0 +1,51 @@
+<ion-view>
+  <ion-header-bar class="bar-positive">
+    <button class="button button-stable ion-chevron-left button-positive" ng-click="goBack('dashboard')">
+      Atrás
+    </button>
+    <h1 class="title">Streaming</h1>
+
+    <div class="buttons">
+      <button class="button button-stable ion-power button-positive" ng-click="cerrarSesion()">
+        Salir
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form name="itemEdit" ng-submit="streamCtrl.start()" novalidate>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="Asunto" ng-model="dataStreaming.name">
+        </label>
+
+        <div class="item item-complex">
+          <fancy-select
+            header-text="Archivo a Mostrar"
+            allow-empty='true'
+            value="dataStreaming.file"
+            text="Selecciona un Archivo"
+            modal-template-url="lib/ionic-fancy-select/templates/modal-template.html"
+            template-url="lib/ionic-fancy-select/templates/item-template.html"
+            items="availableFiles">
+          </fancy-select>
+        </div>
+        <div class="item item-complex">
+          <fancy-select
+            header-text="Modulos"
+            allow-empty='false'
+            value="dataStreaming.devices"
+            text="Selecciona los Modulos"
+            modal-template-url="lib/ionic-fancy-select/templates/modal-template.html"
+            template-url="lib/ionic-fancy-select/templates/item-template.html"
+            items="devices"
+            multi-select="true"></fancy-select>
+        </div>
+        <ion-checkbox ng-model="dataStreaming.streamAudio">Transmitir Audio</ion-checkbox>
+        <ion-checkbox ng-model="dataStreaming.streamVideo">Transmitir Video</ion-checkbox>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Iniciar Transmisión</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
