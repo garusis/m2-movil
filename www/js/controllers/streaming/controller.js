@@ -57,6 +57,9 @@ angular
             id: file.id, text: file.nombre, checked: false
           };
         });
+        $scope.availableFiles.unshift({
+          id: null, text: 'Ninguno', checked: true
+        });
       }, function () {
       });
 
@@ -75,10 +78,20 @@ angular
   .controller('StreamingController', ['$scope', '$state', '$stateParams', 'streaming', '$ionicSlideBoxDelegate',
     function ($scope, $state, $stateParams, streaming, $ionicSlideBoxDelegate) {
       var controller = this;
+
       $scope.changePage = function (index) {
-        console.log(index);
         $scope.currentStreaming.file.currentPage = index;
         streaming.changePageFile(index);
+      };
+
+      $scope.manualChangePage = function (next) {
+        if (!$scope.currentStreaming.file) {
+          return;
+        }
+        if (next) {
+          return $ionicSlideBoxDelegate.next();
+        }
+        $ionicSlideBoxDelegate.previous();
       };
 
       var eventStateChangeSuccess = $scope.$on("$stateChangeSuccess", function () {
@@ -140,10 +153,10 @@ angular
         $("#targetVideo").attr("src", null);
         eventStateChangeSuccess();
         streaming.endStreaming().then(function () {
-          $scope.currentStreaming = null;
-          $scope.mediaStreaming = false;
-          $state.go("streaming");
-        })
+            $scope.currentStreaming = null;
+            $scope.mediaStreaming = false;
+            $state.go("streaming");
+          })
           .catch(function (err) {
             console.error(err);
           });
@@ -304,7 +317,6 @@ angular
         };
         $(document).scroll(scrollHandler);
         events.push({element: $(document), type: "scroll", handler: scrollHandler});
-        console.log(data);
         deferred.resolve(data);
         return deferred.promise;
       },

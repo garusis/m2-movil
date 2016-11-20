@@ -12,11 +12,13 @@
     </div>
   </ion-header-bar>
   <ion-content>
-    <ion-slide-box on-slide-changed="changePage($index)">
+    <ion-slide-box show-pager="false" active-slide="currentPage" on-slide-changed="changePage($index)">
       <ion-slide ng-repeat="urlFile in currentStreaming.file.imagenes">
         <ion-list>
           <div class="item item-image">
-            <img class="full-image" ng-src="{{urlFile|originsManager:'base'}}">
+            <img style="min-height: 300px" class="full-image" ng-src="{{urlFile|originsManager:'base'}}">
+            <div class="left-control" ng-click="manualChangePage(false)"></div>
+            <div class="right-control" ng-click="manualChangePage(true)"></div>
           </div>
         </ion-list>
       </ion-slide>
