@@ -25,7 +25,7 @@
           </div>
 
           <div class="item item-image" ng-repeat="img in question.images">
-            <img class="full-image" src="{{img.uri|originsManager:'base'}}">
+            <img class="full-image" ng-src="{{img.uri|originsManager:'base'}}">
           </div>
 
           <div class="item item-body">
@@ -52,9 +52,9 @@
 
 
                 <div class="item" ng-if="answer.images && answer.images.length > 0">
-                  <div class="row">
-                    <div class="col col-50" ng-repeat="img in answer.images"><img class="images"
-                                                                                  src="{{img.uri|originsManager:'base'}}">
+                  <div class="row"  ng-repeat="img in answer.images">
+                    <div class="col">
+                      <img class="images" ng-src="{{img.uri|originsManager:'base'}}">
                     </div>
                   </div>
 
